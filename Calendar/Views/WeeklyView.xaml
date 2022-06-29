@@ -1,0 +1,279 @@
+﻿<UserControl x:Class="Calendar.Views.WeeklyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Calendar.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="10" RadiusY="10" Fill="#FFD7D7D7"/>
+
+        <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Poniedzialek -->
+            <!--<ListBox Name="MondayListBox" SelectionChanged="ListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}"/>-->
+            <!--<Button Grid.Row="3" Grid.Column="1" Click="Daily_Click" Name="Monday" Opacity="0"/>-->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="Poniedziałek" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                    <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="MondayListBox" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    <Button Grid.Row="0" Grid.Column="0" Click="Daily_Click" Name="Monday" Content="Monday" Opacity="0"/>
+                </Grid>
+
+            </Grid>
+
+            <!-- Wtorek -->
+            <!--<ListBox Name="TuesdayListBox" SelectionChanged="ListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}"/>-->
+            <!--<Button Grid.Row="3" Grid.Column="1" Click="Daily_Click" Name="Tuesday" Opacity="0"/>-->
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="Wtorek" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                    <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="TuesdayListBox" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    <Button Grid.Row="0" Grid.Column="0" Click="Daily_Click" Name="Tuesday" Content="Tuesday" Opacity="0"/>
+                </Grid>
+            </Grid>
+
+            <!-- Sroda -->
+            <!--<ListBox Name="WedensdayListBox" SelectionChanged="ListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}"/>-->
+            <!--<Button Grid.Row="3" Grid.Column="1" Click="Daily_Click" Name="Wedensday" Opacity="0"/>-->
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="Środa" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                    <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="WednesdayListBox" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    <Button Grid.Row="0" Grid.Column="0" Click="Daily_Click" Name="Wedensday" Content="Wednesday" Opacity="0"/>
+                </Grid>
+            </Grid>
+
+            <!-- Czwartek -->
+            <!--<ListBox Name="ThursdayListBox" SelectionChanged="ListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}"/>-->
+            <!--<Button Grid.Row="3" Grid.Column="1" Click="Daily_Click" Name="Thursday" Opacity="0"/>-->
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="Czwartek" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                    <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="ThursdayListBox" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    <Button Grid.Row="0" Grid.Column="0" Click="Daily_Click" Name="Thursday" Content="Thursday" Opacity="0"/>
+                </Grid>
+            </Grid>
+
+            <!-- Piatek -->
+            <!--<ListBox Name="FridayListBox" SelectionChanged="ListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}"/>-->
+            <!--<Button Grid.Row="3" Grid.Column="1" Click="Daily_Click" Name="Friday" Opacity="0"/>-->
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="Piątek" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                    <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="FridayListBox" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    <Button Grid.Row="0" Grid.Column="0" Click="Daily_Click" Name="Friday" Content="Friday" Opacity="0"/>
+                </Grid>
+            </Grid>
+
+            <!-- Sobota -->
+            <!--<ListBox Name="SaturdayListBox" SelectionChanged="ListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}"/>-->
+            <!--<Button Grid.Row="3" Grid.Column="1" Click="Daily_Click" Name="Saturday" Opacity="0"/>-->
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="Sobota" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                    <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="SaturdayListBox" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    <Button Grid.Row="0" Grid.Column="0" Click="Daily_Click" Name="Saturday" Content="Saturday" Opacity="0"/>
+                </Grid>
+            </Grid>
+
+            <!-- Niedziela -->
+            <!--<ListBox Name="SundayListBox" SelectionChanged="ListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}"/>-->
+            <!--<Button Grid.Row="3" Grid.Column="1" Click="Daily_Click" Name="Sunday" Opacity="0"/>-->
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="Niedziela" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                    <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="SundayListBox" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    <Button Grid.Row="0" Grid.Column="0" Click="Daily_Click" Name="Sunday" Content="Sunday" Opacity="0"/>
+                </Grid>
+            </Grid>
+
+            <!-- Notatki -->
+            <!--<TextBox Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>-->
+            <!--<Button Grid.Row="3" Grid.Column="1" Click="Weekly_Click" Name="Notes" Opacity="0"/>-->
+            <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="52*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="Notatki" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Rectangle Grid.Row="3" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <TextBox Name="NotesTextBox" Grid.Row="3" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" FontFamily="Microsoft YaHei UI Light"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

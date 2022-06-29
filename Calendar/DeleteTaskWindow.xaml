@@ -1,0 +1,95 @@
+﻿<Window x:Class="Calendar.DeleteTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calendar"
+        mc:Ignorable="d"
+        Title="DeleteTaskWindow" Height="400" Width="600"
+        Closing="deleteTaskWindow_Closing"
+        Topmost="True">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <!--Grid widok boczny-->
+        <!--Tło-->
+        <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="10" RadiusY="10" Fill="#FFD7D7D7"/>
+
+        <!--<TextBlock Name="MonthlyNextTextBlock" Text="Nastepny Miesiac" FontFamily="Microsoft YaHei UI Light"/>-->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="38*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+            <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                <TextBlock Name="DeleteNameTextBlock" Text="Usuwanie zadanie" FontFamily="Microsoft YaHei UI Light"/>
+            </Viewbox>
+            <Rectangle Grid.Row="3" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFD7D7D7"/>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid  Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                    <TextBox  Grid.Row="1" Grid.Column="2" Name="TaskIDTextBlock" Text="Wpisz ID zadania do usunięcia" GotFocus="TaskIDTextBlock_Focus" TextWrapping="Wrap"  FontFamily="Microsoft YaHei UI Light" VerticalAlignment="Center" HorizontalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24"/>
+                </Grid>
+                <Viewbox Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" >
+                    <TextBlock Name="WarningTextBlock" Text="  Czy na pewno chcesz usunąć to zadanie?  " FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Grid Grid.Row="9" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Name ="DeleteRectangle" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                    <Viewbox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" >
+                        <TextBlock Name="DeleteTextBlock" Text="Usuń" FontFamily="Microsoft YaHei UI Light"/>
+                    </Viewbox>
+                    <Button Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Click="Delete_Click" Name="DeleteXML" Content="DeleteView" Opacity="0"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

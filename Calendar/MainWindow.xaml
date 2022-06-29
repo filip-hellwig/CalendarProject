@@ -1,0 +1,460 @@
+﻿<Window x:Class="Calendar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calendar"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <!-- Grid główny -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Grid dla przycisków u góry -->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Przycisk widok roczny -->
+            <!-- <Button Grid.Row="1" Grid.Column="1" Click="YearlyView_Click"  Name="YearlyViewXML" Content="YearlyView" Opacity="0"/> -->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="YearlyViewTextBlock" Text="Widok Roczny" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="1" Click="YearlyView_Click" Name="YearlyViewXML" Content="YearlyView" Opacity="0"/>
+            </Grid>
+
+            <!-- Przycisk widok miesięczny -->
+            <!-- <Button Grid.Row="1" Grid.Column="1" Click="MonthlyView_Click" Name="MonthlyViewXML" Content="MonthlyView" Opacity="0"/> -->
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="MonthlyViewTextBlock" Text="Widok Miesięczny" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="1" Click="MonthlyView_Click"  Name="MonthlyViewXML" Content="MonthlyView" Opacity="0"/>
+            </Grid>
+
+            <!-- Przycisk widok tygodniowy -->
+            <!-- <Button Grid.Row="1" Grid.Column="1" Click="WeeklyView_Click" Name="WeeklyViewXML" Content="WeeklyView" Opacity="0"/> -->
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="WeeklyViewTextBlock" Text="Widok Tygodniowy" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="1" Click="WeeklyView_Click" Name="WeeklyViewXML" Content="WeeklyView" Opacity="0"/>
+            </Grid>
+
+            <!-- Przycisk statystyki -->
+            <!-- <Button Grid.Row="1" Grid.Column="1" Click="Stats_Click" Name="StatsXML" Content="Stats" Opacity="0"/> -->
+            <Grid Name="StatsGrid" Grid.Row="0" Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="statsViewTextBlock" Text="Statystyki" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="1" Click="Stats_Click" Name="StatsXML" Content="Stats" Opacity="0"/>
+            </Grid>
+
+            <!-- Przycisk o aplikacji -->
+            <!-- <Button Grid.Row="1" Grid.Column="1" Click="About_Click" Name="AboutXML" Content="About" Opacity="0"/> -->
+            <Grid Grid.Row="0" Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="AboutAppTextBlock" Text="O aplikacji" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="1" Click="About_Click" Name="AboutXML" Content="About" Opacity="0"/>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="ChangeUserTextBlock" Text="ChangeUser" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="1" Click="ChangeUser_Click" Name="ChangeUserXML" Content="ChangeUser" Opacity="0"/>
+            </Grid>
+
+
+            <Grid Grid.Row="0" Grid.Column="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="LogOutTextBlock" Text="LogOut" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="1" Click="LogOut_Click" Name="LogOutXML" Content="LogOut" Opacity="0"/>
+            </Grid>
+
+            <!-- Przycisk o aplikacji -->
+            <!-- <Button Grid.Row="1" Grid.Column="1" Click="About_Click" Name="AboutXML" Content="About" Opacity="0"/> -->
+            <Grid Grid.Row="0" Grid.Column="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Name="EnglishRectangle" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Text="ENG" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="1" Click="English_Click" Name="EnglishXML" Content="English" Opacity="0"/>
+
+                <Rectangle Name="PolishRectangle" Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                <Viewbox Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" >
+                    <TextBlock Text="PL" FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="3" Click="Polish_Click" Name="PolishXML" Content="Polish" Opacity="0"/>
+            </Grid>
+
+        </Grid>
+
+        <!-- Grid od tytułu i przycisków -->
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="0.1*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Tytuł i przyciski -->
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="0*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Grid tytuł -->
+                <!-- <TextBlock Name="Title" Text="Wybierz widok" FontFamily="Microsoft YaHei UI Light"/> -->
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="0*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="16*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" RadiusX="15" RadiusY="15" Fill="#FFb5d48e"/>
+                    <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                        <TextBlock Name="Title" Text="Wybierz widok" FontFamily="Microsoft YaHei UI Light"/>
+                    </Viewbox>
+                </Grid>
+
+                <!-- Grid przyciski -->
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Przycisk widok cofnij -->
+                    <!-- <Button Grid.Row="1" Grid.Column="1" Click="Back_Click" Name="BackXML" Content="Cofnij" Opacity="0"/> -->
+                    <Grid Name="BackGrid" Grid.Row="0" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                        <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                            <TextBlock Name="BackTextBlock" Text="Cofnij" FontFamily="Microsoft YaHei UI Light"/>
+                        </Viewbox>
+                        <Button Grid.Row="1" Grid.Column="1" Click="Back_Click" Name="BackXML" Content="Cofnij" Opacity="0"/>
+                    </Grid>
+
+                    <!-- Przycisk widok poprzedni -->
+                    <!-- <Button Grid.Row="1" Grid.Column="1" Click="Previous_Click" Name="PreviousXML" Content="Poprzedni" Opacity="0"/> -->
+                    <Grid Grid.Row="0" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                        <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                            <TextBlock Name="PreviousTextBlock" Text="Poprzedni" FontFamily="Microsoft YaHei UI Light"/>
+                        </Viewbox>
+                        <Button Grid.Row="1" Grid.Column="1" Click="Previous_Click" Name="PreviousXML" Content="Poprzedni" Opacity="0"/>
+                    </Grid>
+
+                    <!-- Przycisk widok następny -->
+                    <!-- <Button Grid.Row="1" Grid.Column="1" Click="Next_Click" Name="NextXML" Content="Następny" Opacity="0"/> -->
+                    <Grid Grid.Row="0" Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                        <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                            <TextBlock Name="NextTextBlock" Text="Następny" FontFamily="Microsoft YaHei UI Light"/>
+                        </Viewbox>
+                        <Button Grid.Row="1" Grid.Column="1" Click="Next_Click" Name="NextXML" Content="Następny" Opacity="0"/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+
+            <!--Grid do przycisków lewo/prawo-->
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Przycisk nowe zadanie -->
+                <!-- <Button Grid.Row="2" Grid.Column="1" Click="Left_Click" Name="LeftXML" Content="WeeklyViewSides" Opacity="0"/> -->
+                <Grid Name="AddNewTaskGrid" Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="0" Grid.RowSpan="2"  Grid.Column="1" Grid.ColumnSpan="3" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                    <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" >
+                        <TextBlock Name="AddTextBlock" Text="Dodaj zadanie" FontFamily="Microsoft YaHei UI Light"/>
+                    </Viewbox>
+                    <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Click="AddNewTask_Click" Name="AddNewTaskXML" Content="WeeklyViewSides" Opacity="0"/>
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Name="DeleteTaskGrid" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Row="0" Grid.RowSpan="2"  Grid.Column="1" Grid.ColumnSpan="3" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                        <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" >
+                            <TextBlock Name="DeleteTextBlock" Text="Usuń zadanie" FontFamily="Microsoft YaHei UI Light"/>
+                        </Viewbox>
+                        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Click="DeleteTask_Click" Name="DeleteTaskXML" Content="WeeklyViewSides" Opacity="0"/>
+                    </Grid>
+
+                    <Grid Name="ModifyTaskGrid" Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Row="0" Grid.RowSpan="2"  Grid.Column="1" Grid.ColumnSpan="3" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                        <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" >
+                            <TextBlock Name="ModifyTextBlock" Text="Modyfikuj zadanie" FontFamily="Microsoft YaHei UI Light"/>
+                        </Viewbox>
+                        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Click="ModifyTask_Click" Name="ModifyTaskXML" Content="WeeklyViewSides" Opacity="0"/>
+                    </Grid>
+                </Grid>
+
+                <!-- Przycisk lewo -->
+                <!-- <Button Grid.Row="2" Grid.Column="1" Click="Left_Click" Name="LeftXML" Content="WeeklyViewSides" Opacity="0"/> -->
+                <Grid Name="LeftGrid" Grid.Row="1" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                    <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                        <TextBlock Name="LeftTextBlock" Text="&lt;-" FontFamily="Microsoft YaHei UI Light"/>
+                    </Viewbox>
+                    <Button Grid.Row="1" Grid.Column="1" Click="Left_Click" Name="LeftXML" Content="WeeklyViewSides" Opacity="0"/>
+                </Grid>
+
+                <!-- Przycisk prawo -->
+                <!-- <Button Grid.Row="2" Grid.Column="1" Click="Right_Click" Name="RightXML" Content="WeeklyViewSides" Opacity="0" /> -->
+                <Grid Name="RightGrid" Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                    <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                        <TextBlock Name="RightTextBlock" Text="-&gt;" FontFamily="Microsoft YaHei UI Light"/>
+                    </Viewbox>
+                    <Button Grid.Row="1" Grid.Column="1" Click="Right_Click" Name="RightXML" Content="WeeklyViewSides" Opacity="0"/>
+                </Grid>
+            </Grid>
+
+            <!-- Zmiana widoków -->
+            <!-- Calendar -->
+            <!--<Grid Grid.Row="2" Grid.Column="1" Name ="CalendarXaml">-->
+            <Grid Grid.Row="2" Grid.Column="1" Name ="CalendarXaml">
+            </Grid>
+
+            <!-- Extension -->
+            <!-- <Grid.Row="2" Grid.Column="2" Name ="ExtensionXaml"> -->
+            <Grid Grid.Row="2" Grid.Column="2" Name ="ExtensionXaml">
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

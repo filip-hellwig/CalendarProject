@@ -1,0 +1,123 @@
+﻿<Window x:Class="Calendar.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calendar"
+        mc:Ignorable="d"
+        Title="StartWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="68*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <!--Grid widok boczny-->
+        <!--Tło-->
+        <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="10" RadiusY="10" Fill="#FFD7D7D7"/>
+
+        <!--<TextBlock Name="MonthlyNextTextBlock" Text="Nastepny Miesiac" FontFamily="Microsoft YaHei UI Light"/>-->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="38*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Name="EnglishRectangle" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                    <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                        <TextBlock Text="ENG" FontFamily="Microsoft YaHei UI Light"/>
+                    </Viewbox>
+                    <Button Grid.Row="1" Grid.Column="1" Click="English_Click" Name="EnglishXML" Content="English" Opacity="0"/>
+
+                    <Rectangle Name="PolishRectangle" Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" RadiusX="5" RadiusY="5" Fill="#FFededed"/>
+                    <Viewbox Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" >
+                        <TextBlock Text="PL" FontFamily="Microsoft YaHei UI Light"/>
+                    </Viewbox>
+                    <Button Grid.Row="1" Grid.Column="3" Click="Polish_Click" Name="PolishXML" Content="Polish" Opacity="0"/>
+                </Grid>
+            </Grid>
+
+
+            <Rectangle Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+            <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                <TextBlock Name="Start1TextBlock" Text="Start" FontFamily="Microsoft YaHei UI Light"/>
+            </Viewbox>
+            <Viewbox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" >
+                <TextBlock Name="Start2TextBlock" Text="Start" FontFamily="Microsoft YaHei UI Light"/>
+            </Viewbox>
+            <Rectangle Name="LoginRectangle" Grid.Row="4" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+            <TextBox  Grid.Row="4" Grid.Column="1" Name="LoginTextBlock" Text="Login" GotFocus="LoginTextBlock_Focus" TextWrapping="Wrap"  FontFamily="Microsoft YaHei UI Light" VerticalAlignment="Center" HorizontalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24"/>
+            <Rectangle Grid.Row="6" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+            <TextBox  Grid.Row="6" Grid.Column="1" Name="PasswordTextBlock" Text="Password" GotFocus="PasswordTextBlock_Focus" TextWrapping="Wrap"  FontFamily="Microsoft YaHei UI Light" VerticalAlignment="Center" HorizontalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24"/>
+
+            <Viewbox Name="WrongViewbox" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" >
+                <TextBlock Name="WrongTextBlock" Text="NiepoprawneHaslo" FontFamily="Microsoft YaHei UI Light"/>
+            </Viewbox>
+
+            <Grid Grid.Row="10" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Name ="DeleteRectangle" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+                <Viewbox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Name="DoneTextBlock" Text="Log in " FontFamily="Microsoft YaHei UI Light"/>
+                </Viewbox>
+                <Button Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Click="Done_Click" Name="DoneXML" Content="DoneView" Opacity="0"/>
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</Window>

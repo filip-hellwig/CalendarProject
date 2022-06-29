@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Calendar.ExtensionViews.MonthlyTasks"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Calendar.ExtensionViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <!--Grid widok boczny-->
+        <!--Tło-->
+        <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="10" RadiusY="10" Fill="#FFD7D7D7"/>
+
+        <!--<ListBox Name="MonthlyTasksListBox" Grid.Row="3" Grid.Column="1" SelectionChanged="ListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}"/>-->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="38*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Row="1" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+            <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" >
+                <TextBlock Name="MonthlyTaskTextBlock" Text="Zadania Miesięczne" FontFamily="Microsoft YaHei UI Light"/>
+            </Viewbox>
+            <Rectangle Grid.Row="3" Grid.Column="1" RadiusX="5" RadiusY="5" Fill="#FFf4f4f4"/>
+            <ListBox Grid.Row="3" Grid.Column="1" Name="MonthlyTasksListBox" FontFamily="Microsoft YaHei UI Light" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        </Grid>
+    </Grid>
+</UserControl>
